@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etch A Sketch</title>
+</head>
+
+<body>
+  <h1>Use arrow key to draw anything you love!</h1>
+  <div>
+    <canvas width="1600" height="1000" id="etch-a-sketch"></canvas>
+    <div class="buttons">
+      <button class="shake">Shake!</button>
+    </div>
+  </div>
+  <script src="./etch-a-sketch.js"></script>
+
+  <style>
+    body {
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      font-family: serif;
+      background: repeating-linear-gradient(45deg, #fafafa 0% 1%, #48d1cc 1% 5%);
+    }
+
+    h1 {
+      background: #fafafa;
+      color: #48d1cc;
+      padding: 3px 15px;
+      border-radius: 5px;
+    }
+
+    canvas {
+      border: 10px solid #48d1cc;
+      border-radius: 10px;
+      width: 800px;
+      height: 500px;
+      background: #fafafa;
+    }
+
+    button.shake {
+      padding: 10px;
+      background: #48d1cc;
+      border: 5px solid #fafafa;
+      color: #fafafa;
+      font-size: 1.5rem;
+      border-radius: 5px;
+      font-family: serif;
+      font-weight: 700;
+      letter-spacing: 0.1rem;
+    }
+
+    canvas.shake {
+      animation: shake 0.5s linear 1;
+    }
+
+    @keyframes shake {
+
+      10%,
+      90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+
+      20%,
+      80% {
+        transform: translate3d(2px, 0, 0);
+      }
+
+      30%,
+      50%,
+      70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+
+      40%,
+      60% {
+        transform: translate3d(4px, 0, 0);
+      }
+    }
+  </style>
+</body>
+
+</html>
